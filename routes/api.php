@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\TaskApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/hello', function (){
+    return 'Hello World';
 });
-
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', 'middleware' => ['auth:sanctum']], function () {
+/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+})->name('user');*/
+Route::group(['prefix' => '', 'as' => 'api.', 'middleware' => ['auth:sanctum']], function () {
+    // Users
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    })->name('user');
     // Task
-    Route::resource('tasks', 'TaskApiController');
+    Route::get('/tasks', [TaskApiController::class, 'index'])->name('tasks');
+    Route::post('task/create', [TaskApiController::class, 'create'])->name('task.create');
 
     // Note
     Route::post('notes/media', 'NoteApiController@storeMedia')->name('notes.storeMedia');

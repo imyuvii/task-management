@@ -2,22 +2,15 @@
 
 namespace App\Models;
 
-use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Note extends Model
 {
-    use SoftDeletes, InteractsWithMedia, HasFactory;
+    use SoftDeletes, HasFactory;
 
     public $table = 'notes';
-
-    protected $appends = [
-        'attachment',
-    ];
 
     protected $dates = [
         'created_at',
@@ -48,23 +41,12 @@ class Note extends Model
         'deleted_at',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
+    protected $hidden = [
+        'deleted_at',
+    ];
 
-    public function getAttachmentAttribute()
+    public function attachments()
     {
-        return $this->getMedia('note_attachment')->map(function ($item) {
-            $media        = $item->toArray();
-            $media['url'] = $item->getUrl();
-
-            return $media;
-        });
-    }
-
-    public function task()
-    {
-        return $this->belongsTo(Task::class);
+        return $this->hasMany(Attachment::class);
     }
 }
