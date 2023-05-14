@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): \Illuminate\Http\JsonResponse
     {
         if (!Auth::attempt($request->only('email', 'password'))) {
             throw new HttpResponseException(response()->json([
@@ -19,6 +19,10 @@ class LoginController extends Controller
         }
         $user = $request->user();
         $token = $user->createToken('authToken')->plainTextToken;
-        return response()->json(['token' => $token]);
+        return response()->json([
+            'success'   => true,
+            'token'     => $token,
+            'user'      => $user,
+        ]);
     }
 }

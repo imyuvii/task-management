@@ -17,14 +17,11 @@ use App\Http\Controllers\TaskApiController;
 |
 */
 
-Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/hello', function (){
-    return 'Hello World';
+Route::get('/', function (){
+    return 'Welcome to Task Management API';
 });
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-})->name('user');*/
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::group(['prefix' => '', 'as' => 'api.', 'middleware' => ['auth:sanctum']], function () {
     // Users
     Route::get('/user', function (Request $request) {
@@ -32,6 +29,7 @@ Route::group(['prefix' => '', 'as' => 'api.', 'middleware' => ['auth:sanctum']],
     })->name('user');
     // Task
     Route::get('/tasks', [TaskApiController::class, 'index'])->name('tasks');
+    Route::get('/tasks2', [TaskApiController::class, 'index'])->name('tasks2');
     Route::post('task/create', [TaskApiController::class, 'create'])->name('task.create');
 
     // Note
