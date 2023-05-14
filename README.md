@@ -5,7 +5,7 @@ Laravel 10.x requires a minimum PHP version of 8.1.
 
 - Clone repository `git@github.com:imyuvii/task-management.git`
 - Go to the directory `cd task-management`
-- Run `composer install`
+- Run `composer install`, Make sure you're running on PHP 8.1+
 - Copy `.env.example` to `.env`
 - Configure your database connection
 - Run migration `php artisan migrate`
