@@ -76,7 +76,7 @@ class TaskApiController extends Controller
                 if(isset($note['attachment'])) {
                     foreach ($note['attachment'] as $note_attachment) {
                         $filename = "attachment_" . time() . '.' . $note_attachment->getClientOriginalExtension();
-                        $note_attachment->storeAs('public/' . env('ATTACHMENT_DIR_NAME', 'attachments'), $filename);
+                        $note_attachment->storeAs('public/storage/' . env('ATTACHMENT_DIR_NAME', 'attachments'), $filename);
                         Attachment::create([
                             'note_id' => $note_id,
                             'name' => $filename
