@@ -1,0 +1,818 @@
+{
+	"info": {
+		"_postman_id": "e7ed43ac-0d5f-4bf7-859d-c9978d41cf94",
+		"name": "Task Management",
+		"description": "Task Management contains basic apis to manage tasks, It allows logged in user to view and create tasks. You will have to pass 'Bearer Token' which your received after logged in to the system. Here is the example:\n\n\\--header 'Authorization: Bearer 9|sG6Hy4eMMwRvD4Z0x3FRRNVDK6qrDYjumRxDtzBu'",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "187878"
+	},
+	"item": [
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hello",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:46:33 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:46:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "Welcome to Task Management API"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Wick\",\n    \"email\": \"johnwick@example.com\",\n    \"password\": \"wick12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Wick\",\n    \"email\": \"johnwick@example.com\",\n    \"password\": \"wick12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:48:55 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:48:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully created user!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johnwick@example.com\",\n    \"password\": \"wick12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"JohnDoe123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:49:15 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:49:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"9|sG6Hy4eMMwRvD4Z0x3FRRNVDK6qrDYjumRxDtzBu\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n        \"updated_at\": \"2023-05-13T19:13:38.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:50:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:50:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n    \"updated_at\": \"2023-05-13T19:13:38.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/tasks",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "New",
+							"disabled": true
+						},
+						{
+							"key": "due_date",
+							"value": "2023-05-15",
+							"disabled": true
+						},
+						{
+							"key": "priority",
+							"value": "High",
+							"disabled": true
+						},
+						{
+							"key": "notes",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Tasks - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "New",
+									"disabled": true
+								},
+								{
+									"key": "due_date",
+									"value": "2023-05-15",
+									"disabled": true
+								},
+								{
+									"key": "priority",
+									"value": "High",
+									"disabled": true
+								},
+								{
+									"key": "notes",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 04:21:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 04:21:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"subject\": \"Quos odit fugit quibusdam delectus.\",\n            \"description\": \"Et laudantium nam quibusdam perferendis sit fugit iste. Ducimus quis at illo perspiciatis velit in officiis. Perferendis quaerat voluptatibus quia voluptatem deserunt. Et commodi fuga asperiores ad. Illo porro iusto modi tempore corrupti neque. Natus sit et magnam consequatur.\",\n            \"start_date\": \"2023-02-12\",\n            \"end_date\": \"2023-06-10\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"High\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 4,\n            \"notes\": [\n                {\n                    \"id\": 4,\n                    \"subject\": \"Doloremque molestiae corporis qui non consequatur.\",\n                    \"note\": \"Dolor sed eligendi saepe sed. Et praesentium amet recusandae eveniet inventore vero id. Ea voluptatem nisi id cupiditate. Vel pariatur quia quae harum dicta. Quas et sapiente fugit recusandae quod blanditiis. Voluptates perferendis mollitia illum qui quis.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 2,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 5,\n                    \"subject\": \"Voluptate enim sequi et odio suscipit.\",\n                    \"note\": \"Nostrum harum omnis sit necessitatibus. Ut iure temporibus tenetur hic aut id atque non. Provident ad blanditiis sunt.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 2,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 6,\n                    \"subject\": \"Impedit ea quas optio.\",\n                    \"note\": \"Laborum quisquam et libero ad minus. A harum eos laboriosam ratione quas placeat qui. Veniam dolor accusamus dolorem. A perferendis deleniti quia dignissimos et qui omnis. Aut doloribus ullam et non a porro.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 2,\n                    \"attachments\": [\n                        {\n                            \"id\": 3,\n                            \"name\": \"4096e9fb-ac1a-3a0b-99e7-72075d7f97c7.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 6,\n                            \"path\": \"http://127.0.0.1:8000/attachments/4096e9fb-ac1a-3a0b-99e7-72075d7f97c7.pdf\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"name\": \"5b5b90f8-e98b-3d2c-a85c-49ea56cbb67a.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 6,\n                            \"path\": \"http://127.0.0.1:8000/attachments/5b5b90f8-e98b-3d2c-a85c-49ea56cbb67a.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 7,\n                    \"subject\": \"Voluptas est libero.\",\n                    \"note\": \"Dicta voluptatem qui ut reprehenderit non veniam. Reiciendis veniam rerum ut iure amet assumenda qui. Iste tempora est sint officia placeat.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 2,\n                    \"attachments\": [\n                        {\n                            \"id\": 5,\n                            \"name\": \"4441dad9-e38b-3542-afeb-b2ec897212a8.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 7,\n                            \"path\": \"http://127.0.0.1:8000/attachments/4441dad9-e38b-3542-afeb-b2ec897212a8.pdf\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"subject\": \"Repudiandae pariatur aspernatur aspernatur possimus.\",\n            \"description\": \"Sunt porro exercitationem voluptate praesentium rem sit. Mollitia eligendi et expedita dolorem sunt dolor provident veniam. Omnis iste qui quia excepturi. Autem dicta est id asperiores ut eum vel.\",\n            \"start_date\": \"2022-06-09\",\n            \"end_date\": \"2023-05-22\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"High\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 4,\n            \"notes\": [\n                {\n                    \"id\": 9,\n                    \"subject\": \"Ducimus dolor minima beatae laudantium.\",\n                    \"note\": \"Illum error ex maiores maiores porro. Dolor ut itaque similique ut. Laboriosam explicabo voluptas aut doloribus illum.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 4,\n                    \"attachments\": [\n                        {\n                            \"id\": 7,\n                            \"name\": \"1277e95f-5f3c-38ca-b242-c470d19211e0.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 9,\n                            \"path\": \"http://127.0.0.1:8000/attachments/1277e95f-5f3c-38ca-b242-c470d19211e0.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 10,\n                    \"subject\": \"Qui non dicta sit.\",\n                    \"note\": \"Deleniti voluptates eligendi dolor est consectetur mollitia. Qui officia est voluptatem. Doloribus et repellendus qui. Velit tempora et in ratione corporis aut error reprehenderit. Quia ea fuga dolorum nemo similique. Ut qui voluptatem voluptatum officiis eveniet.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 4,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 11,\n                    \"subject\": \"Maxime dolorem cupiditate.\",\n                    \"note\": \"Et ducimus amet ut sit vel animi corporis esse. Deleniti rerum asperiores sequi consequuntur esse. Optio mollitia eaque ipsa veritatis aut dolorem inventore. Fuga iure non id et quas minima. Necessitatibus porro minima praesentium.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 4,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 12,\n                    \"subject\": \"Officia quibusdam et.\",\n                    \"note\": \"Nulla nobis ipsum possimus rerum ab in id. Cum sed explicabo rerum ullam inventore. Illum atque minus eligendi dicta et. Ipsam maiores voluptate facere et nostrum quibusdam aspernatur.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 4,\n                    \"attachments\": [\n                        {\n                            \"id\": 8,\n                            \"name\": \"18916730-9097-3748-bad2-8b44f8dde9ce.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 12,\n                            \"path\": \"http://127.0.0.1:8000/attachments/18916730-9097-3748-bad2-8b44f8dde9ce.pdf\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"subject\": \"Explicabo molestiae nihil possimus quia.\",\n            \"description\": \"Assumenda repellat et hic qui. Hic eaque sint dolore quo. Quos ratione non ducimus quia quaerat facere rerum eos. Voluptatem et molestiae voluptatibus non ab non ut. Recusandae sit et quisquam a tempora in voluptatem blanditiis. Voluptas occaecati quia recusandae tenetur nam sequi iusto.\",\n            \"start_date\": \"2023-04-22\",\n            \"end_date\": \"2023-06-08\",\n            \"status\": \"Completed\",\n            \"priority\": \"High\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 1,\n            \"notes\": [\n                {\n                    \"id\": 8,\n                    \"subject\": \"Sed doloremque qui itaque eum eos.\",\n                    \"note\": \"Consectetur quos nihil ab itaque nesciunt. Sunt minus hic odio eum aut. Corporis placeat rem voluptatibus. Minima nulla doloremque illo.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 3,\n                    \"attachments\": [\n                        {\n                            \"id\": 6,\n                            \"name\": \"878857ca-bf21-39da-bf6f-b74b5567575f.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 8,\n                            \"path\": \"http://127.0.0.1:8000/attachments/878857ca-bf21-39da-bf6f-b74b5567575f.pdf\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"subject\": \"A quisquam alias.\",\n            \"description\": \"Dolor suscipit et dolorem possimus quo in. Debitis dolore amet voluptatem temporibus modi rerum commodi. Ducimus doloremque eum facere aliquam aliquam. Consectetur ut dolores accusantium suscipit quia. Laudantium quas tempora qui qui officia dolorem aut aut.\",\n            \"start_date\": \"2022-05-27\",\n            \"end_date\": \"2023-06-02\",\n            \"status\": \"Completed\",\n            \"priority\": \"Medium\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 4,\n            \"notes\": [\n                {\n                    \"id\": 25,\n                    \"subject\": \"Esse maiores sapiente.\",\n                    \"note\": \"Officiis perferendis voluptate voluptatem natus velit eum. Dolores eius labore corporis. Aliquid aperiam minima molestiae fugit adipisci aperiam saepe. Delectus nesciunt et ipsam et odit. Quo perferendis quis accusamus quos.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 9,\n                    \"attachments\": [\n                        {\n                            \"id\": 20,\n                            \"name\": \"f41d4c39-233a-35d1-975b-88998d9901f0.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 25,\n                            \"path\": \"http://127.0.0.1:8000/attachments/f41d4c39-233a-35d1-975b-88998d9901f0.pdf\"\n                        },\n                        {\n                            \"id\": 21,\n                            \"name\": \"db357b76-ce52-3ed2-9c23-4867b22b6c0c.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 25,\n                            \"path\": \"http://127.0.0.1:8000/attachments/db357b76-ce52-3ed2-9c23-4867b22b6c0c.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 26,\n                    \"subject\": \"Quas maxime aut qui minima nobis.\",\n                    \"note\": \"Ullam dolorum est molestiae est nihil. Accusamus adipisci minima rem soluta corrupti. Non aut consequatur est odit magnam aliquid.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 9,\n                    \"attachments\": [\n                        {\n                            \"id\": 22,\n                            \"name\": \"98e26813-87cd-3e4b-921b-42c37ee005bf.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 26,\n                            \"path\": \"http://127.0.0.1:8000/attachments/98e26813-87cd-3e4b-921b-42c37ee005bf.pdf\"\n                        },\n                        {\n                            \"id\": 23,\n                            \"name\": \"4c8ed6f6-ea21-3f9f-8b5e-a986de6c6fcc.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 26,\n                            \"path\": \"http://127.0.0.1:8000/attachments/4c8ed6f6-ea21-3f9f-8b5e-a986de6c6fcc.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 27,\n                    \"subject\": \"Beatae nulla quae.\",\n                    \"note\": \"Architecto sunt et rerum corporis. Vero sit error omnis nihil aut ut accusamus. Eligendi facilis sed exercitationem atque. Facilis incidunt ut quia magnam adipisci. Minus dolores magnam voluptates magni illum enim.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 9,\n                    \"attachments\": [\n                        {\n                            \"id\": 24,\n                            \"name\": \"451ee950-7424-3fc1-9c63-5fe73ab1bffe.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 27,\n                            \"path\": \"http://127.0.0.1:8000/attachments/451ee950-7424-3fc1-9c63-5fe73ab1bffe.pdf\"\n                        },\n                        {\n                            \"id\": 25,\n                            \"name\": \"7c0c4f0e-a912-344b-89af-eca26d552a8e.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 27,\n                            \"path\": \"http://127.0.0.1:8000/attachments/7c0c4f0e-a912-344b-89af-eca26d552a8e.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 28,\n                    \"subject\": \"Temporibus tempore magni suscipit sint dolor.\",\n                    \"note\": \"Quas quia vel officiis laborum nam. Rerum quia fugit modi quis est totam eum. Quo voluptates quisquam tempora ipsam odio. Quaerat magnam expedita et qui illo.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 9,\n                    \"attachments\": [\n                        {\n                            \"id\": 26,\n                            \"name\": \"1ecca22a-5439-39d2-9209-f3153af95e60.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 28,\n                            \"path\": \"http://127.0.0.1:8000/attachments/1ecca22a-5439-39d2-9209-f3153af95e60.pdf\"\n                        },\n                        {\n                            \"id\": 27,\n                            \"name\": \"da500808-c59c-3f1d-a25d-babc4b346d3b.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 28,\n                            \"path\": \"http://127.0.0.1:8000/attachments/da500808-c59c-3f1d-a25d-babc4b346d3b.pdf\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"subject\": \"Voluptas aperiam aut perspiciatis in.\",\n            \"description\": \"Ut veritatis hic rerum. Omnis magnam magni explicabo nulla voluptas laboriosam debitis. Est quis quo cum porro repudiandae in. Accusantium aliquam fugiat officiis laudantium quo hic.\",\n            \"start_date\": \"2022-07-18\",\n            \"end_date\": \"2023-06-12\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"Medium\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 3,\n            \"notes\": [\n                {\n                    \"id\": 16,\n                    \"subject\": \"Ipsum consequatur ut ducimus asperiores et.\",\n                    \"note\": \"Facilis eos recusandae nihil voluptatem aut exercitationem earum. Aperiam nemo qui iste eius enim. Rerum consequatur consequatur dolorem optio sunt voluptatum necessitatibus ab. Voluptas eaque culpa tenetur voluptas ea.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 6,\n                    \"attachments\": [\n                        {\n                            \"id\": 10,\n                            \"name\": \"a7df4e7f-b6f3-3abe-b204-7ed28c60c32e.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 16,\n                            \"path\": \"http://127.0.0.1:8000/attachments/a7df4e7f-b6f3-3abe-b204-7ed28c60c32e.pdf\"\n                        },\n                        {\n                            \"id\": 11,\n                            \"name\": \"ce376f28-c503-3d55-a493-678432a37d6c.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 16,\n                            \"path\": \"http://127.0.0.1:8000/attachments/ce376f28-c503-3d55-a493-678432a37d6c.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 17,\n                    \"subject\": \"Eum architecto nam.\",\n                    \"note\": \"Id est autem quis rerum odit et quia. Repellendus sed enim esse provident. Nisi modi sint et molestias ipsam adipisci sit.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 6,\n                    \"attachments\": [\n                        {\n                            \"id\": 12,\n                            \"name\": \"0c5d003f-caff-3bf0-a03a-39ba175ff24a.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 17,\n                            \"path\": \"http://127.0.0.1:8000/attachments/0c5d003f-caff-3bf0-a03a-39ba175ff24a.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 18,\n                    \"subject\": \"Quam tempore animi omnis ea.\",\n                    \"note\": \"Optio perferendis culpa nihil et laborum excepturi rerum. Amet dolorem saepe explicabo animi aliquid culpa. Porro qui sed odio labore. Ea saepe est non voluptate rerum quis est. Aut quis dignissimos distinctio et unde exercitationem dolor amet. Repellendus nemo ullam est.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 6,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"subject\": \"Et quasi pariatur.\",\n            \"description\": \"Facere consequatur minus quasi sequi eos est. Explicabo sint odit sed nam ut. Dicta iusto omnis eum dolor. Quidem explicabo dolorem soluta at est modi. Quis dolores quam explicabo repudiandae sed aut aut.\",\n            \"start_date\": \"2022-09-26\",\n            \"end_date\": \"2023-06-01\",\n            \"status\": \"New\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 4,\n            \"notes\": [\n                {\n                    \"id\": 21,\n                    \"subject\": \"Ut facilis numquam unde.\",\n                    \"note\": \"Ex suscipit architecto et id et aut. Eum optio ipsa iure eius. Quae et ut nemo nam. Et atque ab atque sint eius aut.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 8,\n                    \"attachments\": [\n                        {\n                            \"id\": 14,\n                            \"name\": \"7dcd59ef-690d-38cc-a5a2-280a7e2e99dd.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 21,\n                            \"path\": \"http://127.0.0.1:8000/attachments/7dcd59ef-690d-38cc-a5a2-280a7e2e99dd.pdf\"\n                        },\n                        {\n                            \"id\": 15,\n                            \"name\": \"408b4f34-eb05-39ca-8fbd-803565787238.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 21,\n                            \"path\": \"http://127.0.0.1:8000/attachments/408b4f34-eb05-39ca-8fbd-803565787238.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 22,\n                    \"subject\": \"Aliquam autem voluptatum eius.\",\n                    \"note\": \"Odio et et et et ratione cupiditate quia. Natus nostrum suscipit laborum eum corrupti non. Qui consequatur nihil qui provident veritatis. Explicabo quod voluptate rerum expedita sunt provident pariatur. Aut distinctio possimus odio aperiam eveniet. Esse laudantium voluptatibus dolore et optio esse.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 8,\n                    \"attachments\": [\n                        {\n                            \"id\": 16,\n                            \"name\": \"72a04bd6-4b2e-31f6-a0eb-5af79679374f.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 22,\n                            \"path\": \"http://127.0.0.1:8000/attachments/72a04bd6-4b2e-31f6-a0eb-5af79679374f.pdf\"\n                        },\n                        {\n                            \"id\": 17,\n                            \"name\": \"b1b2d814-269c-34f1-926c-e63af45006ac.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 22,\n                            \"path\": \"http://127.0.0.1:8000/attachments/b1b2d814-269c-34f1-926c-e63af45006ac.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 23,\n                    \"subject\": \"Ut similique ut beatae.\",\n                    \"note\": \"Repellat et quod quia accusantium accusantium temporibus aut. Iure ut expedita quis vitae illum. Eum dolor voluptas voluptate distinctio impedit sunt architecto.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 8,\n                    \"attachments\": [\n                        {\n                            \"id\": 18,\n                            \"name\": \"7a936601-7932-3556-98bf-77a481bdc0df.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 23,\n                            \"path\": \"http://127.0.0.1:8000/attachments/7a936601-7932-3556-98bf-77a481bdc0df.pdf\"\n                        },\n                        {\n                            \"id\": 19,\n                            \"name\": \"60c53013-3788-3485-92a3-63010eb577d0.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 23,\n                            \"path\": \"http://127.0.0.1:8000/attachments/60c53013-3788-3485-92a3-63010eb577d0.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 24,\n                    \"subject\": \"Occaecati delectus optio est.\",\n                    \"note\": \"Explicabo earum repellendus est dolorem minus rem quis. Repudiandae molestiae et autem. Recusandae voluptas distinctio natus doloribus eum. Rerum rerum et reiciendis sapiente reprehenderit aliquid odit. Quos in numquam dolor et voluptate ut.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 8,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"subject\": \"Soluta et sit veritatis ut.\",\n            \"description\": \"Sint corporis deleniti quam id accusantium exercitationem reprehenderit perspiciatis. Voluptates dolorem sit et ut inventore ut a. Itaque et non officiis maxime recusandae aperiam vero. Consectetur delectus laboriosam praesentium non ea sed. Consequatur harum nihil repudiandae et id id dicta. Ipsum qui qui molestiae.\",\n            \"start_date\": \"2023-04-22\",\n            \"end_date\": \"2023-06-08\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 3,\n            \"notes\": [\n                {\n                    \"id\": 1,\n                    \"subject\": \"Voluptatem nobis odio delectus sunt.\",\n                    \"note\": \"Ipsam explicabo est delectus autem. Eius cumque accusamus vitae ratione quisquam repellat placeat. Vel pariatur rerum maiores qui ut sit ea. Eos ut architecto voluptatem pariatur velit harum expedita.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 1,\n                    \"attachments\": [\n                        {\n                            \"id\": 1,\n                            \"name\": \"ea4d587f-6b69-3048-abe6-76c259415164.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 1,\n                            \"path\": \"http://127.0.0.1:8000/attachments/ea4d587f-6b69-3048-abe6-76c259415164.pdf\"\n                        },\n                        {\n                            \"id\": 2,\n                            \"name\": \"861154a9-2f50-3c1e-a9f5-655f5ba57df3.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 1,\n                            \"path\": \"http://127.0.0.1:8000/attachments/861154a9-2f50-3c1e-a9f5-655f5ba57df3.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 2,\n                    \"subject\": \"Facere assumenda ipsam expedita.\",\n                    \"note\": \"Perferendis explicabo accusantium sint et est est. Ea maxime molestias ratione et dolorem incidunt atque odit. Laborum atque quia rerum sapiente distinctio. Saepe aut quis enim et fugiat omnis. Voluptas placeat beatae voluptatem sit soluta. Iusto similique maiores mollitia est est aut expedita.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 1,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 3,\n                    \"subject\": \"Minima optio aut.\",\n                    \"note\": \"Est reprehenderit officiis ut. Repudiandae sint magnam odit inventore facere ad esse occaecati. Enim fuga incidunt illum molestiae accusamus ab natus beatae. Voluptatibus odio cumque esse et ut placeat a.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 1,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"subject\": \"Doloremque vel consequatur dignissimos.\",\n            \"description\": \"Et qui autem dolorem dolor. Aut quia earum et asperiores maiores. Sed odit sunt qui unde voluptatum aut non. Asperiores veritatis culpa autem omnis. Beatae consequatur aspernatur commodi eaque atque. Est est dolor explicabo perferendis doloribus.\",\n            \"start_date\": \"2023-01-29\",\n            \"end_date\": \"2023-05-15\",\n            \"status\": \"New\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 3,\n            \"notes\": [\n                {\n                    \"id\": 13,\n                    \"subject\": \"In qui dignissimos amet nulla.\",\n                    \"note\": \"Omnis repellendus harum aperiam architecto at illum facilis. Nobis inventore eos fugiat. Repellat doloribus maxime ullam sint.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 5,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 14,\n                    \"subject\": \"Minima ut quia non nulla.\",\n                    \"note\": \"Dolorum natus error veritatis id non maiores aut. Perspiciatis reiciendis perferendis tempore qui consequatur delectus dolorum. Culpa pariatur ut fugiat enim iure minima.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 5,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 15,\n                    \"subject\": \"Tenetur ipsum aut.\",\n                    \"note\": \"Est eveniet error odio et maiores pariatur eius. Illo dolor esse dignissimos saepe. Illum reprehenderit ut eos excepturi esse. Perferendis incidunt sed et autem nostrum. Qui harum iure facilis cumque velit quia officia. Autem molestiae sed aut culpa ex earum.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 5,\n                    \"attachments\": [\n                        {\n                            \"id\": 9,\n                            \"name\": \"5cef5009-7646-3950-9167-57aa08ea4fdd.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 15,\n                            \"path\": \"http://127.0.0.1:8000/attachments/5cef5009-7646-3950-9167-57aa08ea4fdd.pdf\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"id\": 11,\n            \"subject\": \"Test Subject 22\",\n            \"description\": \"Lorem Ipsum Lorem Ipsum\",\n            \"start_date\": \"2023-01-01\",\n            \"end_date\": \"2023-05-18\",\n            \"status\": \"New\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-14 03:50:36\",\n            \"updated_at\": \"2023-05-14 03:50:36\",\n            \"notes_count\": 3,\n            \"notes\": [\n                {\n                    \"id\": 31,\n                    \"subject\": \"Test\",\n                    \"note\": \"Note: Lorem ipsum lorem ipsum\",\n                    \"created_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"updated_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"task_id\": 11,\n                    \"attachments\": [\n                        {\n                            \"id\": 29,\n                            \"name\": \"attachment_1684036236.csv\",\n                            \"created_at\": \"2023-05-14T03:50:36.000000Z\",\n                            \"updated_at\": \"2023-05-14T03:50:36.000000Z\",\n                            \"note_id\": 31,\n                            \"path\": \"http://127.0.0.1:8000/attachments/attachment_1684036236.csv\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 32,\n                    \"subject\": \"Subject 2\",\n                    \"note\": \"Test Note 2\",\n                    \"created_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"updated_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"task_id\": 11,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 33,\n                    \"subject\": \"Test subject\",\n                    \"note\": \"test Note\",\n                    \"created_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"updated_at\": \"2023-05-14T03:50:36.000000Z\",\n                    \"task_id\": 11,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 12,\n            \"subject\": \"Test Subject 22\",\n            \"description\": \"Lorem Ipsum Lorem Ipsum\",\n            \"start_date\": \"2023-01-01\",\n            \"end_date\": \"2023-05-18\",\n            \"status\": \"New\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-14 04:11:56\",\n            \"updated_at\": \"2023-05-14 04:11:56\",\n            \"notes_count\": 3,\n            \"notes\": [\n                {\n                    \"id\": 34,\n                    \"subject\": \"Test\",\n                    \"note\": \"Note: Lorem ipsum lorem ipsum\",\n                    \"created_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"updated_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"task_id\": 12,\n                    \"attachments\": [\n                        {\n                            \"id\": 30,\n                            \"name\": \"attachment_1684037516.csv\",\n                            \"created_at\": \"2023-05-14T04:11:56.000000Z\",\n                            \"updated_at\": \"2023-05-14T04:11:56.000000Z\",\n                            \"note_id\": 34,\n                            \"path\": \"http://127.0.0.1:8000/attachments/attachment_1684037516.csv\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 35,\n                    \"subject\": \"Subject 2\",\n                    \"note\": \"Test Note 2\",\n                    \"created_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"updated_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"task_id\": 12,\n                    \"attachments\": []\n                },\n                {\n                    \"id\": 36,\n                    \"subject\": \"Test subject\",\n                    \"note\": \"test Note\",\n                    \"created_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"updated_at\": \"2023-05-14T04:11:56.000000Z\",\n                    \"task_id\": 12,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"subject\": \"Officiis quisquam officia similique nostrum.\",\n            \"description\": \"Cupiditate ut consectetur reprehenderit soluta. Non explicabo aut labore aut aperiam tempore. Asperiores delectus cupiditate quia qui. Delectus rerum non culpa ad.\",\n            \"start_date\": \"2023-04-10\",\n            \"end_date\": \"2023-05-14\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 2,\n            \"notes\": [\n                {\n                    \"id\": 19,\n                    \"subject\": \"Perferendis rerum quis possimus dignissimos.\",\n                    \"note\": \"Sunt rerum ut praesentium ut et similique odio. Optio aliquam aut error dolore officiis. Et esse expedita voluptatem debitis. Quasi voluptatem veniam veniam quis occaecati error quaerat.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 7,\n                    \"attachments\": [\n                        {\n                            \"id\": 13,\n                            \"name\": \"9e9c8d60-fed7-315e-ba64-14224e5e35ee.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 19,\n                            \"path\": \"http://127.0.0.1:8000/attachments/9e9c8d60-fed7-315e-ba64-14224e5e35ee.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 20,\n                    \"subject\": \"Aliquid id accusamus atque.\",\n                    \"note\": \"Consequuntur voluptatum autem quidem expedita dolorem. Itaque incidunt sequi optio et animi consequatur. Minus placeat ea est pariatur cum et qui.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 7,\n                    \"attachments\": []\n                }\n            ]\n        },\n        {\n            \"id\": 10,\n            \"subject\": \"Quae quis non.\",\n            \"description\": \"Illo tempore sit delectus consequatur maiores quia. Minus sit aperiam nihil quia ullam sint. Et quia id ipsum sequi et modi qui qui. Esse et ullam illum impedit aliquid qui repellat est. Amet in odio excepturi veritatis qui similique. Quia sed nulla quidem maxime.\",\n            \"start_date\": \"2022-09-15\",\n            \"end_date\": \"2023-05-23\",\n            \"status\": \"Incomplete\",\n            \"priority\": \"Low\",\n            \"created_at\": \"2023-05-13 19:13:38\",\n            \"updated_at\": \"2023-05-13 19:13:38\",\n            \"notes_count\": 2,\n            \"notes\": [\n                {\n                    \"id\": 29,\n                    \"subject\": \"Voluptatem perferendis assumenda voluptates itaque.\",\n                    \"note\": \"Tenetur qui voluptatem consequatur et voluptatem. Minus quia et sed quo dolor. Nam dignissimos autem quis ut eos eos.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 10,\n                    \"attachments\": [\n                        {\n                            \"id\": 28,\n                            \"name\": \"61fb3de9-6774-396c-b879-2c62b1021c87.pdf\",\n                            \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                            \"note_id\": 29,\n                            \"path\": \"http://127.0.0.1:8000/attachments/61fb3de9-6774-396c-b879-2c62b1021c87.pdf\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 30,\n                    \"subject\": \"Vel tenetur eos impedit.\",\n                    \"note\": \"Eius exercitationem cum modi autem. Esse earum ad sint et cumque autem. Non recusandae quisquam esse quibusdam non magnam natus. Consequatur quis perspiciatis in earum. Repellat est est ut porro. Rerum repellendus possimus temporibus pariatur.\",\n                    \"created_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"updated_at\": \"2023-05-13T19:13:38.000000Z\",\n                    \"task_id\": 10,\n                    \"attachments\": []\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Task Create",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "subject",
+							"value": "Test Subject 22",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Lorem Ipsum Lorem Ipsum",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "2023-01-01",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-05-18",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "New",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "Low",
+							"type": "text"
+						},
+						{
+							"key": "notes[0][subject]",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "notes[0][attachment][]",
+							"type": "file",
+							"src": "/Users/imyuvii/Downloads/Trade-History_02-05-2023 (1).csv"
+						},
+						{
+							"key": "notes[0][note]",
+							"value": "Note: Lorem ipsum lorem ipsum",
+							"type": "text"
+						},
+						{
+							"key": "notes[1][subject]",
+							"value": "Subject 2",
+							"type": "text"
+						},
+						{
+							"key": "notes[1][note]",
+							"value": "Test Note 2",
+							"type": "text"
+						},
+						{
+							"key": "notes[1][attachment][]",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "notes[2][subject]",
+							"value": "Test subject",
+							"type": "text"
+						},
+						{
+							"key": "notes[2][note]",
+							"value": "test Note",
+							"type": "text"
+						},
+						{
+							"key": "notes[2][attachment]",
+							"type": "file",
+							"src": "/Users/imyuvii/Downloads/Trade-History_02-05-2023 (1).csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/task/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Task Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Test Subject 22",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Lorem Ipsum Lorem Ipsum",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-01-01",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-05-18",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "New",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "Low",
+									"type": "text"
+								},
+								{
+									"key": "notes[0][subject]",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "notes[0][attachment][]",
+									"type": "file",
+									"src": "/Users/imyuvii/Downloads/Trade-History_02-05-2023 (1).csv"
+								},
+								{
+									"key": "notes[0][note]",
+									"value": "Note: Lorem ipsum lorem ipsum",
+									"type": "text"
+								},
+								{
+									"key": "notes[1][subject]",
+									"value": "Subject 2",
+									"type": "text"
+								},
+								{
+									"key": "notes[1][note]",
+									"value": "Test Note 2",
+									"type": "text"
+								},
+								{
+									"key": "notes[1][attachment][]",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "notes[2][subject]",
+									"value": "Test subject",
+									"type": "text"
+								},
+								{
+									"key": "notes[2][note]",
+									"value": "test Note",
+									"type": "text"
+								},
+								{
+									"key": "notes[2][attachment]",
+									"type": "file",
+									"src": "/Users/imyuvii/Downloads/Trade-History_02-05-2023 (1).csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/task/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:50:36 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 May 2023 03:50:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.18"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"Task created successfully\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "your-auth-token",
+			"type": "string"
+		}
+	]
+}
