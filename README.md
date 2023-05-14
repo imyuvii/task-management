@@ -10,6 +10,7 @@ Laravel 10.x requires a minimum PHP version of 8.1.
 - Configure your database connection
 - Run migration `php artisan migrate`
 - Run database seeder `php artisan db:seed`
+- Create symlink with public directory `php artisan storage:link`
 - Run the server `php artisan serve`
 
 ## How to use application
